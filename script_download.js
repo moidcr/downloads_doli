@@ -17,16 +17,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	
 	var payed = localStorage.getItem('paypal');
 	var lnj = document.getElementsByClassName('linkclass');
+	var modnx = document.getElementById("module_namex");
 	if(payed=="YES")
 	{
 		
+		
+		var prod = localStorage.getItem('producto');
+		var downs = parseInt(localStorage.getItem('downs'));
 		if(lnj[0])
 		{
 			lnj[0].style.display="";
+			modnx.innerHTML = fls[prod][0];
 		}
-		var prod = localStorage.getItem('producto');
-		var downs = parseInt(localStorage.getItem('downs'));
-		console.log("downs=========="+downs);
 		if(downs==10)
 		{
 			localStorage.removeItem('paypal');
